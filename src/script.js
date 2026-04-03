@@ -200,6 +200,9 @@ city.addEventListener('change',()=>{
        if(cityName === ""){
         errorMess.style.display='block';
         errorMess.innerText = "Please enter a city name";
+          setTimeout(()=>{
+             errorMess.style.display='none';
+        },10000);
         return;
     }
       saveRecent(cityName)
@@ -212,6 +215,9 @@ searchbtn.addEventListener('click',()=>{
        if(cityName === ""){
         errorMess.style.display='block';
         errorMess.innerText = "Please enter a city name";
+         setTimeout(()=>{
+             errorMess.style.display='none';
+        },10000);
         return;
     }
       saveRecent(cityName);
