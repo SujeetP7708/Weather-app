@@ -263,7 +263,7 @@ function saveRecent(cityName){
 //display recent data in datalist
 function showRecent(){
     const box = document.getElementById("browsers");
-    box.innerHTML = "";
+    
     let cities = JSON.parse(localStorage.getItem("recentCities")) || [];
 
     if(cities.length === 0){
