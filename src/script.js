@@ -16,10 +16,10 @@ const pressurediv=document.getElementById('pressure');
 const feeldiv=document.getElementById('feel');
 const currentlocdiv=document.getElementById('currentloc');
 const imgwatherdiv=document.getElementById('imgwather');
-  const toggleBtn = document.getElementById("tempToggle");
+const toggleBtn = document.getElementById("tempToggle");
 
-
-  let isCelsius = true;
+//c to F uses
+let isCelsius = true;
 let currentTemp = 0;
 let feelsLikeTemp = 0;
 let forecastTemps = [];
@@ -49,7 +49,7 @@ async function getDataByCity(cityName='salem') {
     }
 }
 
-
+//ge the weather data by coordinates
 async function getDataByCoor(lat,lon) {
     try{
                 const fetchApidata=await fetch(`${apiURL}&lat=${lat}&lon=${lon}&units=metric`);
@@ -74,7 +74,7 @@ async function getDataByCoor(lat,lon) {
 }
 
 
-
+//display data for the location city name
 function displayData(jasonData,cityNames){
    
 
@@ -115,7 +115,7 @@ displayDeg.innerHTML = `${cel}°C`;
 
   
 
-
+//button listner for the c To F
 toggleBtn.addEventListener("click",()=>{
     isCelsius=!isCelsius;
 
@@ -125,11 +125,13 @@ toggleBtn.addEventListener("click",()=>{
     updateForecastTemp();
 });
 
+//uppdate the converted value
 function updateMainTemp(){
     displayDeg.innerHTML = formatTemp(currentTemp);
     feeldiv.innerHTML = formatTemp(feelsLikeTemp);
 }
 
+//display forcast data
 function updateForecastTemp(){
     const els=document.querySelectorAll(".forecast-temp");
 
@@ -138,6 +140,7 @@ function updateForecastTemp(){
     });
 }
 
+//C to F convertor
 function formatTemp(temp){
     if(isCelsius){
         return `${Math.round(temp)}°C`;
@@ -146,7 +149,7 @@ function formatTemp(temp){
     }
 }
 
-
+//display function for forecast
 function displayForecast(jasonData) {
     const container = document.getElementById("forecastContainer");
     container.innerHTML = "";
