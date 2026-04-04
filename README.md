@@ -32,7 +32,7 @@ weather-app/
 ├── README.md
 ⚙️ Setup & Installation
 Clone the repository:
-git clone https://github.com/your-username/weather-app.git
+git clone https://github.com/SujeetP7708/Weather-app
 Navigate to the project folder:
 cd weather-app
 Open index.html in your browser
@@ -44,9 +44,8 @@ Go to: https://openweathermap.org/api
 Generate your API key
 Replace in script.js:
 const apiKey = "YOUR_API_KEY";
-📸 Screenshots (Optional)
 
-Add screenshots here if you want
+
 
 🎯 Future Improvements
 🌙 Dark mode
