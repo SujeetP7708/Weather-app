@@ -8,122 +8,156 @@
   <link rel="icon" href="https://openweathermap.org/img/wn/01d.png">
 </head>
 
-<body class=" min-h-screen flex flex-col bg-[white] items-center justify-center px-4 py-4 md:py-[20px]">
-<h1 class=" text-4xl font-extrabold mb-8 " >Weather Website</h1>
-<!-- MAIN GRID -->
-<div class=" w-full max-w-6xl bg-[#efefef] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 border-[1px] p-4 rounded-2xl border-gray-300">
-   
-  <!-- LEFT SIDE -->
-  <div class="flex flex-col gap-4">
+<!-- BODY -->
+<body class="min-h-screen flex flex-col bg-white items-center justify-center px-4 py-4 md:py-[20px]">
 
-    
-    <div class="flex gap-2 relative flex-wrap">
+  <!-- HEADER -->
+  <header class="mb-8 text-center">
+    <h1 class="text-4xl font-extrabold">Weather Website</h1>
+  </header>
+
+  <!-- MAIN CONTENT -->
+
+  <main class="w-full max-w-6xl">
+
+<!-- CURRENT WEATHER SECTION -->
+<section class="bg-[#efefef] grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 border p-4 rounded-2xl border-gray-300">
+
+  <!-- LEFT PANEL -->
+  <article class="flex flex-col gap-4">
+
+    <!-- SEARCH -->
+    <div class="flex gap-2 flex-wrap">
       <input 
-        type="text" 
+        type="text"
         id="getcity"
         placeholder="Enter city..."
-        class="flex-1 h-14 px-4 py-1  rounded-xl text-black outline-none shadow" list="browsers"
+        class="flex-1 h-14 px-4 rounded-xl text-black outline-none shadow"
+        list="browsers"
       >
-      <div class="wrap flex gap-2 w-full">
-        <button id="searchbtn" class="bg-white text-blue-600 shadow flex-1 px-4 py-3 rounded-xl font-semibold hover:bg-gray-200 ">
+
+      <div class="flex gap-2 w-full">
+        <button id="searchbtn" class="bg-white text-blue-600 shadow flex-1 px-4 py-3 rounded-xl font-semibold hover:bg-gray-200">
           Search
         </button>
-        <button id="tempToggle" class="  w-[50px] py-4 h-14 bg-white flex-1 shadow rounded-lg text-sm font-semibold"> °F </button>
+      <!-- toggler button -->
+        <button id="tempToggle" class="h-14 bg-white flex-1 shadow rounded-lg text-sm font-semibold">
+          °F
+        </button>
       </div>
-      <!-- Recent Search Dropdown -->
+
       <datalist id="browsers"></datalist>
     </div>
 
-   
-    <h6 id="fetchmessage" class="hidden bg-red-500 text-white text-center py-2 rounded-lg  justify-between">
-    <span class="">X</span>  
-    </h6>
+    <!-- ERROR MESSAGE -->
+    <aside id="fetchmessage" class="hidden bg-red-500 text-white text-center py-2 rounded-lg">
+      <span>X</span>
+    </aside>
 
-    
-    <button id="currentloc"  class="bg-indigo-600  text-white hover:bg-indigo-800 py-3 rounded-xl font-semibold shadow">
+    <!-- LOCATION BUTTON -->
+    <button id="currentloc" class="bg-indigo-600 text-white hover:bg-indigo-800 py-3 rounded-xl font-semibold shadow">
       Use Current Location
     </button>
 
-    <!--  DETAILS -->
-    <div class="grid grid-cols-2 gap-4 text-center">
+    <!-- WEATHER DETAILS -->
+    <section class="grid grid-cols-2 gap-4 text-center">
 
-      <div class="bg-[#748cf1] text-white p-4 rounded-xl hover:scale-105 transition shadow">
-        <p class="text-sm ">Humidity</p>
+      <article class="bg-[#748cf1] text-white p-4 rounded-xl shadow hover:scale-105 transition">
+        <p class="text-sm">Humidity</p>
         <p id="humility" class="font-bold text-lg">--%</p>
-      </div>
+      </article>
 
-      <div class="bg-[#748cf1] text-white p-4 rounded-xl hover:scale-105 transition shadow">
-        <p class="text-sm ">Wind</p>
+      <article class="bg-[#748cf1] text-white p-4 rounded-xl shadow hover:scale-105 transition">
+        <p class="text-sm">Wind</p>
         <p id="wind" class="font-bold text-lg">-- km/h</p>
-      </div>
+      </article>
 
-      <div class="bg-[#748cf1] text-white p-4 rounded-xl hover:scale-105 transition shadow">
-        <p class="text-sm ">Pressure</p>
+      <article class="bg-[#748cf1] text-white p-4 rounded-xl shadow hover:scale-105 transition">
+        <p class="text-sm">Pressure</p>
         <p id="pressure" class="font-bold text-lg">-- hPa</p>
-      </div>
+      </article>
 
-      <div class="bg-[#748cf1] text-white p-4 rounded-xl hover:scale-105 transition shadow">
-        <p class="text-sm ">Feels Like</p>
+      <article class="bg-[#748cf1] text-white p-4 rounded-xl shadow hover:scale-105 transition">
+        <p class="text-sm">Feels Like</p>
         <p id="feel" class="font-bold text-lg">--°C</p>
-      </div>
+      </article>
 
-    </div>
+    </section>
 
-  </div>
+  </article>
 
-  <!-- RIGHT SIDE  -->
-  <div class="bg-[#748cf1] text-white rounded-2xl p-6 flex  justify-center items-center md:items-center shadow">
+  <!-- RIGHT PANEL -->
+  <article class="bg-[#748cf1] text-white rounded-2xl p-6 flex justify-center items-center shadow">
 
     <div class="flex flex-col justify-center items-center flex-1">
-      <h2 id="citydisplay" class="text-full md:text-3xl font-semibold text-center md:text-left">
+      <h2 id="citydisplay" class="text-3xl font-semibold text-center">
         City
       </h2>
-      <p id="citydeg" class="text-5xl font-bold my-3 text-center md:text-left">
+
+      <p id="citydeg" class="text-5xl font-bold my-3 text-center">
         --°C
       </p>
-      <p id="condition" class="text-lg opacity-90 text-center md:text-left">
+
+      <p id="condition" class="text-lg opacity-90 text-center">
         ---
       </p>
     </div>
-    <div class="mt-4">
-      <img id="imgwather" class="w-48 h-48 mx-auto md:mx-0">
-    </div>
+
+    <figure class="mt-4">
+      <img id="imgwather" class="w-48 h-48 mx-auto" alt="Weather Icon">
+    </figure>
+
+  </article>
+
+</section>
+
+<!-- FORECAST SECTION -->
+<section class="border p-4 rounded-2xl bg-[#efefef] border-gray-300">
+
+  <header>
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">
+      5-Day Forecast
+    </h2>
+  </header>
+
+  <!-- FORECAST GRID -->
+  <div id="forecastContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+
+    <!-- FORECAST CARD -->
+    <article class="bg-[#748cf1] text-white p-4 rounded-xl shadow text-center hover:scale-105 transition border">
+
+      <p class="text-sm">Date</p>
+
+      <figure>
+        <img src="" class="mx-auto w-12 h-12" alt="Forecast Icon">
+      </figure>
+
+      <p class="font-bold text-lg">--°C</p>
+      <p class="text-sm">Wind</p>
+      <p class="text-sm">Humidity</p>
+
+    </article>
 
   </div>
 
- 
+</section>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="mt-6 text-sm text-gray-500 text-center">
+    <p>© 2026 Weather App. All rights reserved.</p>
+  </footer>
+
+  <script src="./src/script.js"></script>
 
 
-</div>
-
-<div class="w-full max-w-6xl mx-auto border-[1px] p-4 rounded-2xl bg-[#efefef] border-gray-300">
-
-  <h2 class="text-2xl font-bold mb-4 text-gray-800">
-    5-Day Forecast
-  </h2>
-
-  <!-- Forecast Container -->
-  <div 
-    id="forecastContainer"
-    class="w-full mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"
-  >
-
-    <!-- Example Card (will be dynamic) -->
-    <div class="bg-[#748cf1] text-white p-4 rounded-xl shadow text-center hover:scale-105 transition border-[1px] border-gray-300  ">
-      <p class="text-sm ">Date</p>
-      <img src="" class="mx-auto w-12 h-12" id="forecastIcon">
-      <p class="font-bold text-lg" id="forecastTemp">--°C</p>
-      <p class="text-sm " id="forecastWind">Wind</p>
-      <p class="text-sm " id="forecastHumidity">Humidity</p>
-    </div>
-
-  </div>
-
-</div>
 
 
  
-<script src="./src/script.js"></script>
+
 </body>
 
 </html>
