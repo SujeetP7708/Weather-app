@@ -8,10 +8,10 @@
   <link rel="icon" href="https://openweathermap.org/img/wn/01d.png">
 </head>
 
-<body class=" min-h-screen flex flex-col bg-[#ececec] items-center justify-center px-4 py-4 md:py-[20px]">
+<body class=" min-h-screen flex flex-col bg-[white] items-center justify-center px-4 py-4 md:py-[20px]">
 <h1 class=" text-4xl font-extrabold mb-8 " >Weather Website</h1>
 <!-- MAIN GRID -->
-<div class=" w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 border-[1px] p-4 rounded-2xl border-gray-300">
+<div class=" w-full max-w-6xl bg-[#efefef] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 border-[1px] p-4 rounded-2xl border-gray-300">
    
   <!-- LEFT SIDE -->
   <div class="flex flex-col gap-4">
@@ -47,22 +47,22 @@
     <!--  DETAILS -->
     <div class="grid grid-cols-2 gap-4 text-center">
 
-      <div class="bg-white p-4 rounded-xl hover:scale-105 transition shadow">
+      <div class="bg-[#748cf1] text-white p-4 rounded-xl hover:scale-105 transition shadow">
         <p class="text-sm ">Humidity</p>
         <p id="humility" class="font-bold text-lg">--%</p>
       </div>
 
-      <div class="bg-white p-4 rounded-xl hover:scale-105 transition shadow">
+      <div class="bg-[#748cf1] text-white p-4 rounded-xl hover:scale-105 transition shadow">
         <p class="text-sm ">Wind</p>
         <p id="wind" class="font-bold text-lg">-- km/h</p>
       </div>
 
-      <div class="bg-white p-4 rounded-xl hover:scale-105 transition shadow">
+      <div class="bg-[#748cf1] text-white p-4 rounded-xl hover:scale-105 transition shadow">
         <p class="text-sm ">Pressure</p>
         <p id="pressure" class="font-bold text-lg">-- hPa</p>
       </div>
 
-      <div class="bg-white p-4 rounded-xl hover:scale-105 transition shadow">
+      <div class="bg-[#748cf1] text-white p-4 rounded-xl hover:scale-105 transition shadow">
         <p class="text-sm ">Feels Like</p>
         <p id="feel" class="font-bold text-lg">--°C</p>
       </div>
@@ -72,7 +72,7 @@
   </div>
 
   <!-- RIGHT SIDE  -->
-  <div class="bg-white rounded-2xl p-6 flex  justify-center items-center md:items-center shadow">
+  <div class="bg-[#748cf1] text-white rounded-2xl p-6 flex  justify-center items-center md:items-center shadow">
 
     <div class="flex flex-col justify-center items-center flex-1">
       <h2 id="citydisplay" class="text-full md:text-3xl font-semibold text-center md:text-left">
@@ -96,7 +96,7 @@
 
 </div>
 
-<div class="w-full max-w-6xl mx-auto border-[1px] p-4 rounded-2xl border-gray-300">
+<div class="w-full max-w-6xl mx-auto border-[1px] p-4 rounded-2xl bg-[#efefef] border-gray-300">
 
   <h2 class="text-2xl font-bold mb-4 text-gray-800">
     5-Day Forecast
@@ -109,12 +109,12 @@
   >
 
     <!-- Example Card (will be dynamic) -->
-    <div class="bg-white p-4 rounded-xl shadow text-center hover:scale-105 transition border-[1px] border-gray-300  ">
-      <p class="text-sm text-gray-500">Date</p>
+    <div class="bg-[#748cf1] text-white p-4 rounded-xl shadow text-center hover:scale-105 transition border-[1px] border-gray-300  ">
+      <p class="text-sm ">Date</p>
       <img src="" class="mx-auto w-12 h-12" id="forecastIcon">
       <p class="font-bold text-lg" id="forecastTemp">--°C</p>
-      <p class="text-sm text-gray-600" id="forecastWind">Wind</p>
-      <p class="text-sm text-gray-600" id="forecastHumidity">Humidity</p>
+      <p class="text-sm " id="forecastWind">Wind</p>
+      <p class="text-sm " id="forecastHumidity">Humidity</p>
     </div>
 
   </div>

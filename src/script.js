@@ -177,14 +177,14 @@ function displayForecast(jasonData) {
         const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
         container.innerHTML += `
-            <div class="bg-white p-4 rounded-xl shadow text-center hover:scale-105 transition">
-                <p class="text-sm text-gray-500">${date}</p>
+            <div class="bg-[#748cf1] text-white p-4 rounded-xl shadow-sm text-center hover:scale-105 transition">
+                <p class="text-sm ">${date}</p>
                 <img src="${iconURL}" class="mx-auto w-12 h-12">
                 <p class="font-bold text-lg forecast-temp" data-index="${index}">
                     ${Math.round(temp)}°C
                 </p>
-                <p class="text-sm text-gray-600">Wind ${wind} m/s</p>
-                <p class="text-sm text-gray-600">Humidity ${humidity}%</p>
+                <p class="text-sm ">Wind ${wind} m/s</p>
+                <p class="text-sm ">Humidity ${humidity}%</p>
             </div>
         `;
     });
